@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication</title>
+    <link rel="stylesheet" href="stylea.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login User</h2>
+        <form class="login-form" id="MainForm">
+            <input type="email" name="email" id ="emailInp" placeholder="Gmail" required>
+            <input type="password" name="password" id="passwordInp" placeholder="Password" required>
+            <button type="submit" id="signUp" name="signup_submit">Sign In</button>
+            <a href="index.html"><button type="button" id="signIn" name="signin_submit">Sign Up</button></a>
+        </form>
+        
+    </div>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
+        import { getDatabase, get, ref, child } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-database.js";
+        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyBYidlL-9JUbwT9CmztNtKsRR7TMuhanr8",
+          authDomain: "portfolio-authentication-35b02.firebaseapp.com",
+          databaseURL: "https://portfolio-authentication-35b02-default-rtdb.firebaseio.com",
+          projectId: "portfolio-authentication-35b02",
+          storageBucket: "portfolio-authentication-35b02.appspot.com",
+          messagingSenderId: "487645832109",
+          appId: "1:487645832109:web:96de33f981729648a93724"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase();
+        const auth = getAuth(app);
+        const dbref = ref(db);
+
+        let EmailInp = document.getElementById('emailInp');
+        let PassInp = document.getElementById('passwordInp');
+        let MainForm = document.getElementById('MainForm');
+
+        let SignInUser = evt => {
+            evt.preventDefault();
+
+            signInWithEmailAndPassword(auth, EmailInp.value, PassInp.value).then((credentials) => {
+                get(child(dbref, 'UsersAuthList/' + credentials.user.uid)).then((snapshot)=>{
+                    if(snapshot.exists) {
+                        sessionStorage.setItem("user-info", JSON.stringify({
+                            firstname: snapshot.val().firstname,
+                            lastname: snapshot.val().lastname
+                        }))
+                        sessionStorage.setItem("user-creds", JSON.stringify(credentials.user));
+                        window.location.href = 'home.html';
+                    }
+                })
+            })
+            .catch((error) => {
+                alert(error.message);
+                console.log(error.code);
+                console.log(error.message);
+            })
+        }
+
+        MainForm.addEventListener("submit", SignInUser);
+      </script>
+</body>
+
+</html>
