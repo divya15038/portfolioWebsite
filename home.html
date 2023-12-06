@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Portfolio Website</title>
+        <link rel="stylesheet" href="style.css">
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/69122229b7.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div id="header">
+            <div class="container">
+                <nav>
+                    <p1 class="logo"><span id="logo1">D</span><span id="logo2">ivya.</span></p1>
+                    <ul id="sidemenu">
+                        <li><a href="#header">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#certifications">Certifications</a></li>
+                        <li><a href="#projects">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                    </ul>
+                    <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+                </nav>
+                <div class="header-text">
+                    <p>Software developer</p>
+                    <h1>Hey! I am <span>Divya<br></span>Hope you're doing great, <p id='greet'></p>!</h1>
+                </div>
+            </div>
+        </div>
+        <!--about section-->
+        <div id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="about-col-1">
+                        <img src="images/user_img.jpeg">
+                    </div>
+                    <div class="about-col-2">
+                        <h1 class="sub-title">About Me</h1>
+                        <p>Hello there! I am currently pursuing Bachelor of Engineering in Information Technology. I am a 4th year student and will be graduating from UIET, Panjab University in July 2024. As for technology interests, I have explored front-end development, data analytics and basic Machine Learning. I would love to work at a company that not only enhances me professionally but also respects all of its employees. </p>
+                        <div class="tab-title">
+                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                            <p class="tab-links" onclick="opentab('education')">Education</p>
+                        </div>
+                        <div class="tab-contents active-tab" id="skills">
+                            <ul>
+                                <li><span>Programming Languages</span><br>C++, Python, Javascript</li>
+                                <li><span>Web Development</span><br>HTML, CSS, ReactJS</li>
+                                <li><span>Data Analytics</span><br>Microsoft Excel, Tableau</li>
+                                <li><span>Tools</span><br>Git, GitHub</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="experience">
+                            <ul>
+                                <li><span>08, 2022 - 09,2022</span><br>Trainer at Design & Innovation Center, Panjab University<br><div class="subpoint"><ul><li>Selected 50 students out of the total 200 students who applied for Summer Training under DIC for Tableau</li><li>Successfully trained and certified 50 students as a part of their summer training, in Tableau.</li><li>Conducted presentations for the prepared final Tableau dashboards by students.</li></ul></div></li>
+                                <li><span>08, 2021 - 08, 2022</span><br>Research Intern at Design and Innovation Center, Panjab University<br><div class="subpoint">My team was responsible for three tasks namely collecting and preparing data, preparing the dashboard design and preparing dashboard using Tableau.</div></li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="education">
+                            <ul>
+                                <li><span>2020 - Present</span><div class="cont"><p>B.E. in IT</p><p>CGPA:9.46</p></div>University Institute of Enginnering & Technology, Panjab University</li>
+                                <li><span>2019-2020</span><div class="cont"><p>Senior Secondary Education</p><p>96.8%</p></div>Stepping Stones Senior Secondary School, Chandigarh</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Certifications section-->
+        <div id="certifications">
+            <div class="container">
+                <h1 class="sub-title">My Certifications</h1>
+                <div class="certification-list">
+                    <div>
+                        <i class="fa-solid fa-code"></i>
+                        <h2>Web Development</h2>
+                        <p>Completed freeCodeCamp's Responsive Web Design certificate that taught HTML, CSS, Flexbox and Grid.</p>
+                        <a href="https://freecodecamp.org/certification/fcc73625f1a-978e-49ef-bc68-f811ae5472ff/responsive-web-design" class="custom-button">See Credential</a>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-chart-simple"></i>
+                        <h2>Data Analytics</h2>
+                        <p>Completed Data Analytics professional certificate offered by Google through Coursera.</p>
+                        <a href="https://www.credly.com/badges/d990910a-18b9-49e8-a314-e2b0b3571345?source=linked_in_profile" class="custom-button">See Credential</a>
+                    </div>
+                    <div>
+                        <i class="fa-regular fa-file-excel"></i>
+                        <h2>Microsoft Excel</h2>
+                        <p>Completed Work Smarter with Microsoft Excel offered by Microsoft through Coursera.</p>
+                        <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/P6JMPN9YRHTF" class="custom-button">See Credential</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Projects-->
+        <div id="projects">
+            <div class="container">
+                <h1 class="sub-title">My Projects</h1>
+                <div class="project-list">
+                    <div class="project">
+                        <img src="images/work-1.png">
+                        <div class="layer">
+                            <h3>Jamming</h3>
+                            <p>It is a responsive, playlist creator web application that makes use of Spotify API to search for songs, personalize a playlist and
+                                then save it to the Spotify account of the user's client.</p>
+                            <a href="http://jamming_playlist_create.surge.sh/"><i class="fa-solid fa-link"></i></a>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <img src="images/work-2.png">
+                        <div class="layer">
+                            <h3>Colmar Academy</h3>
+                            <p>It is a responsive website built from scratch for a fictional orgainization named 'Colmar Academy'.</p>
+                            <a href="https://divya15038.github.io/Colmar_academy/"><i class="fa-solid fa-link"></i></a>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <img src="images/work-3.png">
+                        <div class="layer">
+                            <h3>Trivia game</h3>
+                            <p>This python program is designed to host a sitcom trivia game for the player. This game consists of two rounds each consisting of multiple choice questions.</p>
+                            <a href="https://github.com/divya15038/Python3/blob/master/trivia_game.py"><i class="fa-solid fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <a href = "https://github.com/divya15038" class="btn">See More</a>
+            </div>
+        </div>
+        <!--Contact-->
+        <div id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="contact-left">
+                        <h1 class="sub-title">Contact Me</h1>
+                        <p><i class="fa-solid fa-envelope"></i>divyasharma1509ds@gmail.com</p>
+                        <p><i class="fa-solid fa-phone"></i>9855005660</p>
+                        <div class="social-icons">
+                            <a href="https://www.linkedin.com/in/divya-sharma-she-her-4217081b7/"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://github.com/divya15038"><i class="fa-brands fa-github"></i></a>
+                            <a href="https://www.instagram.com/divya_sharma1503/"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                        <a href="images/divyaSharmaResume.pdf" download class="btn btn2">Download CV</a>
+                    </div>
+                    <div class="contact-right">
+                        <form name="submit-to-google-sheet">
+                            <input type="text" name="Name" placeholder="Your name" required>
+                            <input type="email" name="Email" placeholder="Your email" required>
+                            <textarea name="Message" rows="6" placeholder="Your message"></textarea>
+                            <button type="submit" class="btn btn2">Submit</button>
+                        </form>
+                        <span id="msg"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <div class="ct">
+                    <p>Number of visits:</p>
+                    <p id="counter"></p>
+                </div>
+                <button type="button" class="btn btn3" id="signoutbutton">Sign Out</button>
+            </div>
+        </div>
+        <script>
+            var tablinks = document.getElementsByClassName("tab-links");
+            var tabcontents = document.getElementsByClassName("tab-contents");
+            
+            function opentab(tabname) {
+                for(tablink of tablinks) {
+                    tablink.classList.remove("active-link");
+                }
+                for(tabcontent of tabcontents) {
+                    tabcontent.classList.remove("active-tab");
+                }
+                event.currentTarget.classList.add("active-link");
+                document.getElementById(tabname).classList.add("active-tab");
+            }
+        </script>
+        <!--JavaScript for counter-->
+        <script>
+            const count = document.getElementById("counter");
+            incrementVisitsCount();
+
+            function incrementVisitsCount() {
+                let visits;
+                if(!localStorage.getItem("visits")) localStorage.setItem("visits", 1);
+                visits = +localStorage.getItem("visits");
+                const incrementedCount = visits + 1;
+                localStorage.setItem("visits", incrementedCount);
+
+                count.innerText = localStorage.getItem("visits");
+            }
+        </script>
+        <script>
+            var sidemeu = document.getElementById("sidemenu");
+
+            function openmenu() {
+                sidemeu.style.right = "0";
+            }
+
+            function closemenu() {
+                sidemeu.style.right = "-200px";
+            }
+        </script>
+        <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzkcCrE0wTSOsYQoNtMFvvM5FupHxJctu7h4-1vP096ebakFeGl-qE6blQAMbtNtV6rNw/exec'
+            const form = document.forms['submit-to-google-sheet']
+            const msg = document.getElementById("msg")
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    msg.innerHTML = "Message sent successfully!"
+                    setTimeout(function(){
+                        msg.innerHTML = ""
+                    }, 5000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+          <script>
+            let userCreds = JSON.parse(sessionStorage.getItem("user-cred"));
+            let userInfo = JSON.parse(sessionStorage.getItem("user-info"));
+            
+            let GreetHead = document.getElementById("greet");
+            let signoutbutton = document.getElementById('signoutbutton');
+
+            let SignOut = ()=>{
+                sessionStorage.removeItem("user-creds");
+                sessionStorage.removeItem("user-info");
+                window.location.href = 'login.html'
+            }
+
+            let CheckCred = ()=>{
+                if(!sessionStorage.getItem("user-creds")){
+                    window.location.href = "login.html";
+                }
+                else{
+                    GreetHead.innerText = `${userInfo.firstname}` ;
+                }
+            }
+
+            window.addEventListener("load", CheckCred);
+            signoutbutton.addEventListener('click', SignOut);
+
+          </script>
+    </body>
+</html>
